@@ -9,6 +9,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{1180CE05
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ForexTrader.Models.Tests", "Tests\ForexTrader.Models.Tests\ForexTrader.Models.Tests.csproj", "{83789A2D-9720-4BFD-BA81-3AF790DCBAAE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ForexTrader.Strategies", "ForexTrader.Strategies\ForexTrader.Strategies.csproj", "{08ADD118-0FB6-4BF9-B926-C0089539A84A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ForexTrader.Strategies.Tests", "Tests\ForexTrader.Strategies.Tests\ForexTrader.Strategies.Tests.csproj", "{19D7EB2B-9319-4021-89CF-ED75D2FD4E2A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -46,8 +50,33 @@ Global
 		{83789A2D-9720-4BFD-BA81-3AF790DCBAAE}.Release|x64.Build.0 = Release|Any CPU
 		{83789A2D-9720-4BFD-BA81-3AF790DCBAAE}.Release|x86.ActiveCfg = Release|Any CPU
 		{83789A2D-9720-4BFD-BA81-3AF790DCBAAE}.Release|x86.Build.0 = Release|Any CPU
+		{08ADD118-0FB6-4BF9-B926-C0089539A84A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08ADD118-0FB6-4BF9-B926-C0089539A84A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08ADD118-0FB6-4BF9-B926-C0089539A84A}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{08ADD118-0FB6-4BF9-B926-C0089539A84A}.Debug|x64.Build.0 = Debug|Any CPU
+		{08ADD118-0FB6-4BF9-B926-C0089539A84A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{08ADD118-0FB6-4BF9-B926-C0089539A84A}.Debug|x86.Build.0 = Debug|Any CPU
+		{08ADD118-0FB6-4BF9-B926-C0089539A84A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08ADD118-0FB6-4BF9-B926-C0089539A84A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08ADD118-0FB6-4BF9-B926-C0089539A84A}.Release|x64.ActiveCfg = Release|Any CPU
+		{08ADD118-0FB6-4BF9-B926-C0089539A84A}.Release|x64.Build.0 = Release|Any CPU
+		{08ADD118-0FB6-4BF9-B926-C0089539A84A}.Release|x86.ActiveCfg = Release|Any CPU
+		{08ADD118-0FB6-4BF9-B926-C0089539A84A}.Release|x86.Build.0 = Release|Any CPU
+		{19D7EB2B-9319-4021-89CF-ED75D2FD4E2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19D7EB2B-9319-4021-89CF-ED75D2FD4E2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19D7EB2B-9319-4021-89CF-ED75D2FD4E2A}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{19D7EB2B-9319-4021-89CF-ED75D2FD4E2A}.Debug|x64.Build.0 = Debug|Any CPU
+		{19D7EB2B-9319-4021-89CF-ED75D2FD4E2A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{19D7EB2B-9319-4021-89CF-ED75D2FD4E2A}.Debug|x86.Build.0 = Debug|Any CPU
+		{19D7EB2B-9319-4021-89CF-ED75D2FD4E2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19D7EB2B-9319-4021-89CF-ED75D2FD4E2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19D7EB2B-9319-4021-89CF-ED75D2FD4E2A}.Release|x64.ActiveCfg = Release|Any CPU
+		{19D7EB2B-9319-4021-89CF-ED75D2FD4E2A}.Release|x64.Build.0 = Release|Any CPU
+		{19D7EB2B-9319-4021-89CF-ED75D2FD4E2A}.Release|x86.ActiveCfg = Release|Any CPU
+		{19D7EB2B-9319-4021-89CF-ED75D2FD4E2A}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{83789A2D-9720-4BFD-BA81-3AF790DCBAAE} = {1180CE05-7C26-4CB8-9056-88AC25589057}
+		{19D7EB2B-9319-4021-89CF-ED75D2FD4E2A} = {1180CE05-7C26-4CB8-9056-88AC25589057}
 	EndGlobalSection
 EndGlobal
