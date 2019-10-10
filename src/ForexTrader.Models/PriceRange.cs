@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace ForexTrader.Models
+﻿namespace ForexTrader.Models
 {
     public class PriceRange
     {
