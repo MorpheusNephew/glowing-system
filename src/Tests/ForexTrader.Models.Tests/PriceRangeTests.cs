@@ -43,7 +43,7 @@ namespace ForexTrader.Models.Tests
         }
 
         [Fact]
-        public void Test_TopShadow()
+        public void Test_UpperShadow()
         {
             var priceRange1 = new PriceRange
             {
@@ -66,13 +66,13 @@ namespace ForexTrader.Models.Tests
                 High = 7
             };
 
-            Assert.True(priceRange1.TopShadow());
-            Assert.False(priceRange2.TopShadow());
-            Assert.False(priceRange3.TopShadow());
+            Assert.True(priceRange1.UpperShadow());
+            Assert.False(priceRange2.UpperShadow());
+            Assert.False(priceRange3.UpperShadow());
         }
 
         [Fact]
-        public void Test_BottomShadow()
+        public void Test_LowerShadow()
         {
             var priceRange1 = new PriceRange
             {
@@ -95,9 +95,9 @@ namespace ForexTrader.Models.Tests
                 Low = 7
             };
 
-            Assert.True(priceRange1.BottomShadow());
-            Assert.False(priceRange2.BottomShadow());
-            Assert.False(priceRange3.BottomShadow());
+            Assert.True(priceRange1.LowerShadow());
+            Assert.False(priceRange2.LowerShadow());
+            Assert.False(priceRange3.LowerShadow());
         }
     }
 }

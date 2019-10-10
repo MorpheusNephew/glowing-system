@@ -20,12 +20,12 @@
             return Open > Close;
         }
 
-        public bool TopShadow()
+        public bool UpperShadow()
         {
             return High > Open && High > Close;
         }
 
-        public bool BottomShadow()
+        public bool LowerShadow()
         {
             return Low < Open && Low < Close;
         }
