@@ -12,11 +12,13 @@ namespace ForexTrader.Strategies
 
         public bool StrategyMatch()
         {
-            var lengthOfCandleSticks = _CandleSticks.Count;
+            var lengthOfCandleSticks = NumOfCandleSticks();
 
             for (var i = 0; i < lengthOfCandleSticks; i++)
             {
-                if (_CandleSticks[i].Shape != _InternalPattern[i].Shape)
+                if (_CandleSticks[i].Shape != _InternalPattern[i].Shape
+                    || _CandleSticks[i].Trend != _InternalPattern[i].Trend
+                    || !InternalStrategyMatch(lengthOfCandleSticks))
                 {
                     return false;
                 }
@@ -35,6 +37,11 @@ namespace ForexTrader.Strategies
             _CandleSticks.Add(candleStick);
         }
 
+        public int NumOfCandleSticks()
+        {
+            return _CandleSticks.Count;
+        }
 
+        protected abstract bool InternalStrategyMatch(int candleStickIndex);
     }
 }
