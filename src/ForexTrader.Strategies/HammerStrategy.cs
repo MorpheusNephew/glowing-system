@@ -8,9 +8,9 @@ namespace ForexTrader.Strategies
     {
         public override Trend ExpectedFutureTrend => Trend.Uptrend;
 
-        protected override int _MaxNumberOfCandleSticks => throw new NotImplementedException();
+        protected override int _MaxNumberOfCandleSticks => 3;
 
-        protected override Type _StrategyType => throw new NotImplementedException();
+        protected override Type _StrategyType => typeof(HammerStrategy);
 
         public HammerStrategy()
         {
