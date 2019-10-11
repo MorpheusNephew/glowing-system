@@ -13,6 +13,10 @@ namespace ForexTrader.Strategies
 
         protected IList<CandleStick> _InternalPattern;
 
+        protected abstract int _MaxNumberOfCandleSticks { get; }
+
+        protected abstract Type _StrategyType { get; }
+
         public bool StrategyMatch()
         {
             var lengthOfCandleSticks = NumOfCandleSticks();
@@ -42,7 +46,13 @@ namespace ForexTrader.Strategies
             return _CandleSticks.Count;
         }
 
-        protected abstract void EnsureCanAddCandleStick();
+        protected void EnsureCanAddCandleStick()
+        {
+            if (NumOfCandleSticks() >= _MaxNumberOfCandleSticks)
+            {
+                throw CandleStickExceptions.MaxNumberOfCandleSticks(_StrategyType, _MaxNumberOfCandleSticks);
+            }
+        }
 
         protected abstract bool InternalStrategyMatch(int candleStickIndex);
     }
