@@ -5,5 +5,7 @@ namespace ForexTrader.Models
         public CandleStickShape Shape;
 
         public PriceRange PriceRange;
+
+        public Trend Trend;
     }
 }
