@@ -99,5 +99,79 @@ namespace ForexTrader.Models.Tests
             Assert.False(priceRange2.LowerShadow());
             Assert.False(priceRange3.LowerShadow());
         }
+
+        [Fact]
+        public void Test_DiffToUpperShadow()
+        {
+            var priceRange1 = new PriceRange
+            {
+                High = 3,
+                Open = 1,
+                Close = 2
+            };
+
+            var priceRange2 = new PriceRange
+            {
+                High = 3,
+                Open = 2,
+                Close = 1
+            };
+
+            var priceRange3 = new PriceRange
+            {
+                High = 2,
+                Open = 1,
+                Close = 2
+            };
+
+            var priceRange4 = new PriceRange
+            {
+                High = 2,
+                Open = 2,
+                Close = 1
+            };
+
+            Assert.Equal(1, priceRange1.DiffToUpperShadow());
+            Assert.Equal(1, priceRange2.DiffToUpperShadow());
+            Assert.Equal(0, priceRange3.DiffToUpperShadow());
+            Assert.Equal(0, priceRange4.DiffToUpperShadow());
+        }
+
+        [Fact]
+        public void Test_DiffToLowerShadow()
+        {
+            var priceRange1 = new PriceRange
+            {
+                Low = 0,
+                Open = 1,
+                Close = 2
+            };
+
+            var priceRange2 = new PriceRange
+            {
+                Low = 0,
+                Open = 2,
+                Close = 1
+            };
+
+            var priceRange3 = new PriceRange
+            {
+                Low = 1,
+                Open = 1,
+                Close = 2
+            };
+
+            var priceRange4 = new PriceRange
+            {
+                Low = 1,
+                Open = 2,
+                Close = 1
+            };
+
+            Assert.Equal(1, priceRange1.DiffToLowerShadow());
+            Assert.Equal(1, priceRange2.DiffToLowerShadow());
+            Assert.Equal(0, priceRange3.DiffToLowerShadow());
+            Assert.Equal(0, priceRange4.DiffToLowerShadow());
+        }
     }
 }
