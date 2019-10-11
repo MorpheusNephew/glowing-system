@@ -6,6 +6,8 @@ namespace ForexTrader.Strategies
 {
     public abstract class IStrategy
     {
+        public abstract Trend ExpectedFutureTrend { get; }
+
         protected IList<CandleStick> _CandleSticks;
 
         protected IList<CandleStick> _InternalPattern;
@@ -41,8 +43,6 @@ namespace ForexTrader.Strategies
         {
             return _CandleSticks.Count;
         }
-
-        public abstract Trend ExpectedFutureTrend();
 
         protected abstract bool InternalStrategyMatch(int candleStickIndex);
     }

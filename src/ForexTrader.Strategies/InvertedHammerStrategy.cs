@@ -5,6 +5,8 @@ namespace ForexTrader.Strategies
 {
     public class InvertedHammerStrategy : IStrategy
     {
+        public override Trend ExpectedFutureTrend => Trend.Uptrend;
+
         public InvertedHammerStrategy()
         {
             _CandleSticks = new List<CandleStick>();
@@ -28,14 +30,6 @@ namespace ForexTrader.Strategies
                 };
         }
 
-        public override Trend ExpectedFutureTrend()
-        {
-            return Trend.Uptrend;
-        }
-
-        protected override bool InternalStrategyMatch(int candleStickIndex)
-        {
-            return true;
-        }
+        protected override bool InternalStrategyMatch(int candleStickIndex) => true;
     }
 }
