@@ -1,13 +1,18 @@
+using System;
 using System.Collections.Generic;
 using ForexTrader.Models;
 
 namespace ForexTrader.Strategies
 {
-    public class ShootingStartStrategy : IStrategy
+    public class ShootingStarStrategy : IStrategy
     {
         public override Trend ExpectedFutureTrend => Trend.Downtrend;
 
-        public ShootingStartStrategy()
+        protected override int _MaxNumberOfCandleSticks => throw new NotImplementedException();
+
+        protected override Type _StrategyType => throw new NotImplementedException();
+
+        public ShootingStarStrategy()
         {
             _CandleSticks = new List<CandleStick>();
             _InternalPattern = new List<CandleStick>
@@ -31,10 +36,5 @@ namespace ForexTrader.Strategies
         }
 
         protected override bool InternalStrategyMatch(int candleStickIndex) => true;
-
-        protected override void EnsureCanAddCandleStick()
-        {
-            throw new System.NotImplementedException();
-        }
     }
 }
