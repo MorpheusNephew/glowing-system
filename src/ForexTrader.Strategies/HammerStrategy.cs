@@ -28,6 +28,11 @@ namespace ForexTrader.Strategies
                 };
         }
 
+        public override Trend ExpectedFutureTrend()
+        {
+            return Trend.Uptrend;
+        }
+
         protected override bool InternalStrategyMatch(int candleStickIndex)
         {
             return true;

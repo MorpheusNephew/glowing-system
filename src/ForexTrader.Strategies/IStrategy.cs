@@ -42,6 +42,8 @@ namespace ForexTrader.Strategies
             return _CandleSticks.Count;
         }
 
+        public abstract Trend ExpectedFutureTrend();
+
         protected abstract bool InternalStrategyMatch(int candleStickIndex);
     }
 }
