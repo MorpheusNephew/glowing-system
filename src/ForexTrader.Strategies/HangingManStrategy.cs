@@ -31,5 +31,10 @@ namespace ForexTrader.Strategies
         }
 
         protected override bool InternalStrategyMatch(int candleStickIndex) => true;
+
+        protected override void EnsureCanAddCandleStick()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

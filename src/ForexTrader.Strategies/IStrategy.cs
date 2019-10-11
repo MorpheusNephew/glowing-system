@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using ForexTrader.Models;
+using ForexTrader.Strategies.Exceptions;
 
 namespace ForexTrader.Strategies
 {
@@ -31,10 +32,7 @@ namespace ForexTrader.Strategies
 
         public void AppendCandleStick(CandleStick candleStick)
         {
-            if (_CandleSticks.Count >= 3)
-            {
-                throw new OverflowException("Max number of candle sticks is 3");
-            }
+            EnsureCanAddCandleStick();
 
             _CandleSticks.Add(candleStick);
         }
@@ -43,6 +41,8 @@ namespace ForexTrader.Strategies
         {
             return _CandleSticks.Count;
         }
+
+        protected abstract void EnsureCanAddCandleStick();
 
         protected abstract bool InternalStrategyMatch(int candleStickIndex);
     }
