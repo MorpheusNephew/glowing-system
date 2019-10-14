@@ -34,7 +34,13 @@ namespace ForexTrader.Models
             }
         }
 
+        public bool LongerLowerShadow => DiffToLowerShadow > DiffToUpperShadow;
+
+        public bool LongerUpperShadow => DiffToUpperShadow > DiffToLowerShadow;
+
         public bool LowerShadow => Low < Open && Low < Close;
+
+        public bool NoShadows => !UpperShadow && !LowerShadow;
 
         public double OpenCloseDiff => Math.Abs(Open - Close);
 
