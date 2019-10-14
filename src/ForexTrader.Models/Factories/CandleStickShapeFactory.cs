@@ -42,22 +42,46 @@ namespace ForexTrader.Models.Factories
             return GetShortBodyCandleStickShape(priceRange);
         }
 
-        private static CandleStickShape GetCandleStickShapeInternal(PriceRange priceRange, string candleStickSize)
+        private static CandleStickShape GetCandleStickShapeInternal(PriceRange priceRange, Func<string, CandleStickShape> getCandleStickShape)
         {
             if (priceRange.NoShadows)
             {
-                return $"{candleStickSize}NoShadows".ToCandleStickShape();
+                return getCandleStickShape("NoShadows");
             }
 
-            // TODO: Finish implementing internal method
+            if (priceRange.DiffToLowerShadow >= _UpperLowerShadowDiff
+                && priceRange.DiffToUpperShadow >= _UpperLowerShadowDiff)
+            {
+                return getCandleStickShape("LongShadows");
+            }
 
-            throw new NotImplementedException();
+            if (priceRange.DiffToLowerShadow > priceRange.DiffToUpperShadow)
+            {
+                return priceRange.DiffToLowerShadow >= _UpperLowerShadowDiff
+                    ? getCandleStickShape("LongLowerShadow")
+                    : getCandleStickShape("LongerLowerShadow");
+            }
+
+            if (priceRange.DiffToUpperShadow > priceRange.DiffToLowerShadow)
+            {
+                return priceRange.DiffToUpperShadow >= _UpperLowerShadowDiff
+                    ? getCandleStickShape("LongUpperShadow")
+                    : getCandleStickShape("LongerUpperShadow");
+            }
+
+            throw new OverflowException("Case has not been accounted for");
         }
 
-        private static CandleStickShape GetLongBodyCandleStickShape(PriceRange priceRange) => GetCandleStickShapeInternal(priceRange, "LongBody");
+        private static CandleStickShape GetLongBodyCandleStickShape(PriceRange priceRange) =>
+            GetCandleStickShapeInternal(priceRange, StringToCandleStickShapeInternal("LongBody"));
 
-        private static CandleStickShape GetShortBodyCandleStickShape(PriceRange priceRange) => GetCandleStickShapeInternal(priceRange, "ShortBody");
+        private static CandleStickShape GetShortBodyCandleStickShape(PriceRange priceRange) =>
+            GetCandleStickShapeInternal(priceRange, StringToCandleStickShapeInternal("ShortBody"));
 
-        private static CandleStickShape GetTinyBodyCandleStickShape(PriceRange priceRange) => GetCandleStickShapeInternal(priceRange, "TinyBody");
+        private static CandleStickShape GetTinyBodyCandleStickShape(PriceRange priceRange) =>
+            GetCandleStickShapeInternal(priceRange, StringToCandleStickShapeInternal("TinyBody"));
+
+        private static Func<string, CandleStickShape> StringToCandleStickShapeInternal(string candleStickSize) =>
+            (candleStickType) => $"{candleStickSize}{candleStickType}".ToCandleStickShape();
     }
 }
