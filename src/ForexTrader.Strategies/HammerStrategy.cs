@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using ForexTrader.Models;
 
@@ -10,11 +9,8 @@ namespace ForexTrader.Strategies
 
         protected override int _MaxNumberOfCandleSticks => 3;
 
-        protected override Type _StrategyType => typeof(HammerStrategy);
-
         public HammerStrategy()
         {
-            _CandleSticks = new List<CandleStick>();
             _InternalPattern = new List<CandleStick>
                 {
                     new CandleStick
@@ -35,6 +31,6 @@ namespace ForexTrader.Strategies
                 };
         }
 
-        protected override bool InternalStrategyMatch(int candleStickIndex) => true;
+        public override bool StrategyMatch() => true;
     }
 }

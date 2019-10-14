@@ -1,4 +1,4 @@
-using System;
+using System.Collections.Generic;
 using ForexTrader.Models;
 
 namespace ForexTrader.Strategies
@@ -7,10 +7,33 @@ namespace ForexTrader.Strategies
     {
         public override Trend ExpectedFutureTrend => Trend.Uptrend;
 
-        protected override int _MaxNumberOfCandleSticks => throw new NotImplementedException();
+        protected override int _MaxNumberOfCandleSticks => 4;
 
-        protected override Type _StrategyType => throw new NotImplementedException();
+        public BullishEngulfingStrategy()
+        {
+            _InternalPattern = new List<CandleStick>
+            {
+                new CandleStick
+                {
+                    Trend = Trend.Downtrend,
+                },
+                new CandleStick
+                {
+                    Trend = Trend.Downtrend,
+                    Shape = CandleStickShape.ShortBodyLongerLowerShadow
+                },
+                new CandleStick
+                {
+                    Trend = Trend.Uptrend,
+                    Shape = CandleStickShape.LongBodyLongerUpperShadow
+                },
+                new CandleStick
+                {
+                    Trend = Trend.Uptrend
+                }
+            };
+        }
 
-        protected override bool InternalStrategyMatch(int candleStickIndex) => true;
+        public override bool StrategyMatch() => true;
     }
 }

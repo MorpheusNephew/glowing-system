@@ -1,4 +1,3 @@
-using System;
 using ForexTrader.Models;
 
 namespace ForexTrader.Strategies
@@ -7,10 +6,8 @@ namespace ForexTrader.Strategies
     {
         public override Trend ExpectedFutureTrend => Trend.Downtrend;
 
-        protected override int _MaxNumberOfCandleSticks => throw new NotImplementedException();
+        protected override int _MaxNumberOfCandleSticks => 4;
 
-        protected override Type _StrategyType => throw new NotImplementedException();
-
-        protected override bool InternalStrategyMatch(int candleStickIndex) => true;
+        public override bool StrategyMatch() => true;
     }
 }

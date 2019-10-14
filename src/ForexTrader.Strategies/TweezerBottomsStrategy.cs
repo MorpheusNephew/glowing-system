@@ -1,16 +1,13 @@
-using System;
 using ForexTrader.Models;
 
 namespace ForexTrader.Strategies
 {
     public class TweezerBottomsStrategy : IStrategy
     {
-        public override Trend ExpectedFutureTrend => throw new NotImplementedException();
+        public override Trend ExpectedFutureTrend => Trend.Uptrend;
 
-        protected override int _MaxNumberOfCandleSticks => throw new NotImplementedException();
+        protected override int _MaxNumberOfCandleSticks => 4;
 
-        protected override Type _StrategyType => throw new NotImplementedException();
-
-        protected override bool InternalStrategyMatch(int candleStickIndex) => true;
+        public override bool StrategyMatch() => true;
     }
 }

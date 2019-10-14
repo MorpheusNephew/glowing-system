@@ -15,40 +15,25 @@ namespace ForexTrader.Strategies
 
         protected abstract int _MaxNumberOfCandleSticks { get; }
 
-        protected abstract Type _StrategyType { get; }
-
-        public bool StrategyMatch()
+        protected IStrategy()
         {
-            var lengthOfCandleSticks = NumOfCandleSticks();
-
-            for (var i = 0; i < lengthOfCandleSticks; i++)
-            {
-                if (_CandleSticks[i].Shape != _InternalPattern[i].Shape
-                    || _CandleSticks[i].Trend != _InternalPattern[i].Trend
-                    || !InternalStrategyMatch(lengthOfCandleSticks))
-                {
-                    return false;
-                }
-            }
-
-            return true;
+            _CandleSticks = new List<CandleStick>();
         }
 
         public void AppendCandleStick(CandleStick candleStick)
         {
             if (NumOfCandleSticks() >= _MaxNumberOfCandleSticks)
             {
-                throw CandleStickExceptions.MaxNumberOfCandleSticks(_StrategyType, _MaxNumberOfCandleSticks);
+                throw CandleStickExceptions.MaxNumberOfCandleSticks(this.GetType(), _MaxNumberOfCandleSticks);
             }
 
             _CandleSticks.Add(candleStick);
         }
 
-        public int NumOfCandleSticks()
-        {
-            return _CandleSticks.Count;
-        }
+        public int NumOfCandleSticks() => _CandleSticks.Count;
 
-        protected abstract bool InternalStrategyMatch(int candleStickIndex);
+        public bool HasMaxCandleSticks() => NumOfCandleSticks() >= _MaxNumberOfCandleSticks;
+
+        public abstract bool StrategyMatch();
     }
 }
