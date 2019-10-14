@@ -42,7 +42,9 @@ namespace ForexTrader.Models.Factories
             return GetShortBodyCandleStickShape(priceRange);
         }
 
-        private static CandleStickShape GetCandleStickShapeInternal(PriceRange priceRange, Func<string, CandleStickShape> getCandleStickShape)
+        private static CandleStickShape GetCandleStickShapeInternal(
+            PriceRange priceRange,
+            Func<string, CandleStickShape> getCandleStickShape)
         {
             if (priceRange.NoShadows)
             {
