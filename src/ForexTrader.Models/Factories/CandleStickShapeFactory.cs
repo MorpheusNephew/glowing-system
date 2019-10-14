@@ -55,14 +55,14 @@ namespace ForexTrader.Models.Factories
                 return getCandleStickShape("LongShadows");
             }
 
-            if (priceRange.DiffToLowerShadow > priceRange.DiffToUpperShadow)
+            if (priceRange.LongerLowerShadow)
             {
                 return priceRange.DiffToLowerShadow >= _UpperLowerShadowDiff
                     ? getCandleStickShape("LongLowerShadow")
                     : getCandleStickShape("LongerLowerShadow");
             }
 
-            if (priceRange.DiffToUpperShadow > priceRange.DiffToLowerShadow)
+            if (priceRange.LongerUpperShadow)
             {
                 return priceRange.DiffToUpperShadow >= _UpperLowerShadowDiff
                     ? getCandleStickShape("LongUpperShadow")
