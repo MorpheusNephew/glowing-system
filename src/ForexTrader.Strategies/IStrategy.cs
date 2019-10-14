@@ -6,13 +6,13 @@ namespace ForexTrader.Strategies
 {
     public abstract class IStrategy
     {
-        public abstract Trend ExpectedFutureTrend { get; }
-
-        protected abstract int _MaxNumberOfCandleSticks { get; }
-
         protected IList<CandleStick> _CandleSticks;
 
         protected IList<CandleStick> _InternalPattern;
+
+        public abstract Trend ExpectedFutureTrend { get; }
+
+        protected abstract int _MaxNumberOfCandleSticks { get; }
 
         protected IStrategy()
         {
