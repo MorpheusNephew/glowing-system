@@ -19,8 +19,8 @@ namespace ForexTrader.Models.Tests
                 Close = 6
             };
 
-            Assert.True(priceRange1.UpwardTrend());
-            Assert.False(priceRange2.UpwardTrend());
+            Assert.True(priceRange1.UpwardTrend);
+            Assert.False(priceRange2.UpwardTrend);
         }
 
         [Fact]
@@ -38,8 +38,8 @@ namespace ForexTrader.Models.Tests
                 Close = 6
             };
 
-            Assert.False(priceRange1.DownwardTrend());
-            Assert.True(priceRange2.DownwardTrend());
+            Assert.False(priceRange1.DownwardTrend);
+            Assert.True(priceRange2.DownwardTrend);
         }
 
         [Fact]
@@ -66,9 +66,9 @@ namespace ForexTrader.Models.Tests
                 High = 7
             };
 
-            Assert.True(priceRange1.UpperShadow());
-            Assert.False(priceRange2.UpperShadow());
-            Assert.False(priceRange3.UpperShadow());
+            Assert.True(priceRange1.UpperShadow);
+            Assert.False(priceRange2.UpperShadow);
+            Assert.False(priceRange3.UpperShadow);
         }
 
         [Fact]
@@ -95,9 +95,9 @@ namespace ForexTrader.Models.Tests
                 Low = 7
             };
 
-            Assert.True(priceRange1.LowerShadow());
-            Assert.False(priceRange2.LowerShadow());
-            Assert.False(priceRange3.LowerShadow());
+            Assert.True(priceRange1.LowerShadow);
+            Assert.False(priceRange2.LowerShadow);
+            Assert.False(priceRange3.LowerShadow);
         }
 
         [Fact]
@@ -131,10 +131,10 @@ namespace ForexTrader.Models.Tests
                 Close = 1
             };
 
-            Assert.Equal(1, priceRange1.DiffToUpperShadow());
-            Assert.Equal(1, priceRange2.DiffToUpperShadow());
-            Assert.Equal(0, priceRange3.DiffToUpperShadow());
-            Assert.Equal(0, priceRange4.DiffToUpperShadow());
+            Assert.Equal(1, priceRange1.DiffToUpperShadow);
+            Assert.Equal(1, priceRange2.DiffToUpperShadow);
+            Assert.Equal(0, priceRange3.DiffToUpperShadow);
+            Assert.Equal(0, priceRange4.DiffToUpperShadow);
         }
 
         [Fact]
@@ -168,10 +168,10 @@ namespace ForexTrader.Models.Tests
                 Close = 1
             };
 
-            Assert.Equal(1, priceRange1.DiffToLowerShadow());
-            Assert.Equal(1, priceRange2.DiffToLowerShadow());
-            Assert.Equal(0, priceRange3.DiffToLowerShadow());
-            Assert.Equal(0, priceRange4.DiffToLowerShadow());
+            Assert.Equal(1, priceRange1.DiffToLowerShadow);
+            Assert.Equal(1, priceRange2.DiffToLowerShadow);
+            Assert.Equal(0, priceRange3.DiffToLowerShadow);
+            Assert.Equal(0, priceRange4.DiffToLowerShadow);
         }
     }
 }
