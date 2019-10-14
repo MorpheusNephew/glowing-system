@@ -14,7 +14,7 @@ namespace ForexTrader.Models
         ShortBodyLongerUpperShadow, // Longer than the lower shadow
         ShortBodyLongShadows,
         ShortBodyLongUpperShadow,
-        ShortBodyNoShadow,
+        ShortBodyNoShadows,
 
         TinyBodyLongLowerShadow,
         TinyBodyLongerLowerShadow, // Longer than the upper shadow
