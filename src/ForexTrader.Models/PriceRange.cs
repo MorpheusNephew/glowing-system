@@ -1,33 +1,51 @@
-﻿namespace ForexTrader.Models
+﻿using System;
+
+namespace ForexTrader.Models
 {
     public class PriceRange
     {
+        public double Close;
+
         public double High;
 
         public double Low;
 
         public double Open;
 
-        public double Close;
+        public bool DownwardTrend => Open > Close;
 
-        public bool UpwardTrend()
+        public double DiffToLowerShadow
         {
-            return Close > Open;
+            get
+            {
+                var lowestValue = Math.Min(Open, Close);
+
+                return lowestValue - Low;
+            }
         }
 
-        public bool DownwardTrend()
+        public double DiffToUpperShadow
         {
-            return Open > Close;
+            get
+            {
+                var highestValue = Math.Max(Open, Close);
+
+                return High - highestValue;
+            }
         }
 
-        public bool TopShadow()
-        {
-            return High > Open && High > Close;
-        }
+        public bool LongerLowerShadow => DiffToLowerShadow > DiffToUpperShadow;
 
-        public bool BottomShadow()
-        {
-            return Low < Open && Low < Close;
-        }
+        public bool LongerUpperShadow => DiffToUpperShadow > DiffToLowerShadow;
+
+        public bool LowerShadow => Low < Open && Low < Close;
+
+        public bool NoShadows => !UpperShadow && !LowerShadow;
+
+        public double OpenCloseDiff => Math.Abs(Open - Close);
+
+        public bool UpperShadow => High > Open && High > Close;
+
+        public bool UpwardTrend => Close > Open;
     }
 }
