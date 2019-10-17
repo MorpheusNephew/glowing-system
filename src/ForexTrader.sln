@@ -21,6 +21,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ForexTrader.Services", "For
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ForexTrader.Services.Tests", "Tests\ForexTrader.Services.Tests\ForexTrader.Services.Tests.csproj", "{2F649F99-8A81-4795-8B0E-B3601D3050D3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ForexTrader.ConsoleRunner", "ForexTrader.ConsoleRunner\ForexTrader.ConsoleRunner.csproj", "{C45FE89C-A76C-4D02-BF39-553275CA140D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oanda", "Oanda\Oanda.csproj", "{AC206C5B-75BB-44CD-98BC-A3208DFABC46}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -130,6 +134,30 @@ Global
 		{2F649F99-8A81-4795-8B0E-B3601D3050D3}.Release|x64.Build.0 = Release|Any CPU
 		{2F649F99-8A81-4795-8B0E-B3601D3050D3}.Release|x86.ActiveCfg = Release|Any CPU
 		{2F649F99-8A81-4795-8B0E-B3601D3050D3}.Release|x86.Build.0 = Release|Any CPU
+		{C45FE89C-A76C-4D02-BF39-553275CA140D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C45FE89C-A76C-4D02-BF39-553275CA140D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C45FE89C-A76C-4D02-BF39-553275CA140D}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{C45FE89C-A76C-4D02-BF39-553275CA140D}.Debug|x64.Build.0 = Debug|Any CPU
+		{C45FE89C-A76C-4D02-BF39-553275CA140D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C45FE89C-A76C-4D02-BF39-553275CA140D}.Debug|x86.Build.0 = Debug|Any CPU
+		{C45FE89C-A76C-4D02-BF39-553275CA140D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C45FE89C-A76C-4D02-BF39-553275CA140D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C45FE89C-A76C-4D02-BF39-553275CA140D}.Release|x64.ActiveCfg = Release|Any CPU
+		{C45FE89C-A76C-4D02-BF39-553275CA140D}.Release|x64.Build.0 = Release|Any CPU
+		{C45FE89C-A76C-4D02-BF39-553275CA140D}.Release|x86.ActiveCfg = Release|Any CPU
+		{C45FE89C-A76C-4D02-BF39-553275CA140D}.Release|x86.Build.0 = Release|Any CPU
+		{AC206C5B-75BB-44CD-98BC-A3208DFABC46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC206C5B-75BB-44CD-98BC-A3208DFABC46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC206C5B-75BB-44CD-98BC-A3208DFABC46}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{AC206C5B-75BB-44CD-98BC-A3208DFABC46}.Debug|x64.Build.0 = Debug|Any CPU
+		{AC206C5B-75BB-44CD-98BC-A3208DFABC46}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{AC206C5B-75BB-44CD-98BC-A3208DFABC46}.Debug|x86.Build.0 = Debug|Any CPU
+		{AC206C5B-75BB-44CD-98BC-A3208DFABC46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC206C5B-75BB-44CD-98BC-A3208DFABC46}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC206C5B-75BB-44CD-98BC-A3208DFABC46}.Release|x64.ActiveCfg = Release|Any CPU
+		{AC206C5B-75BB-44CD-98BC-A3208DFABC46}.Release|x64.Build.0 = Release|Any CPU
+		{AC206C5B-75BB-44CD-98BC-A3208DFABC46}.Release|x86.ActiveCfg = Release|Any CPU
+		{AC206C5B-75BB-44CD-98BC-A3208DFABC46}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{83789A2D-9720-4BFD-BA81-3AF790DCBAAE} = {1180CE05-7C26-4CB8-9056-88AC25589057}
