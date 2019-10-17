@@ -10,9 +10,9 @@
             "request": "launch",
             "preLaunchTask": "build",
             // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceFolder}/ForextTrader.Strategies.Tests/bin/Debug/netcoreapp2.2/ForextTrader.Strategies.Tests.dll",
+            "program": "${workspaceFolder}/ForexTrader.ConsoleRunner/bin/Debug/netcoreapp2.2/ForexTrader.ConsoleRunner.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/ForextTrader.Strategies.Tests",
+            "cwd": "${workspaceFolder}/ForexTrader.ConsoleRunner",
             // For more information about the 'console' field, see https://aka.ms/VSCode-CS-LaunchJson-Console
             "console": "internalConsole",
             "stopAtEntry": false
